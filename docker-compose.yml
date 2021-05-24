@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  keycloak:
+    image: jboss/keycloak:13.0.0
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - 8080:8080
+
+  java1:
+    build:
+      context: 9978Back1JavaSpring
+      dockerfile: Dockerfile.development
+    environment:
+      - PORT=8081
+    image: 'java-l-one'
+    ports:
+      - 8081:8081
+    depends_on:
+      - keycloak
