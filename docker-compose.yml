@@ -20,3 +20,11 @@ services:
       - 8081:8081
     depends_on:
       - keycloak
+
+  front1:
+    build:
+      context: 9988Front1TSVue
+      dockerfile: Dockerfile.development
+    image: 'js-front1'
+    ports:
+      - 80:80
