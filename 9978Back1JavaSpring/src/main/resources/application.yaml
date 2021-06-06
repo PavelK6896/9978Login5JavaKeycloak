@@ -13,4 +13,4 @@ keycloak:
       securityCollections:
         - patterns:
             - /api/*
-  cors: false
+  cors: true

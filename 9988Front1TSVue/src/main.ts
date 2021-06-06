@@ -12,13 +12,14 @@ const initOptions = {
 }
 
 export const keycloak = Keycloak(initOptions)
+createApp(App).use(store).use(router).mount('#app')
 
 keycloak.init({onLoad: 'login-required'}).then((auth) => {
     if (!auth) {
         window.location.reload();
     } else {
         console.log("Authenticated");
-        createApp(App).use(store).use(router).mount('#app')
+        // createApp(App).use(store).use(router).mount('#app')
     }
 
     // setInterval(() => {
