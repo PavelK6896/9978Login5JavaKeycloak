@@ -19,18 +19,6 @@ public class MainController {
         return "11";
     }
 
-    @GetMapping("/api/2")
-    public String getCurrentUser(KeycloakPrincipal<KeycloakSecurityContext> keycloakPrincipal) {
-        return keycloakPrincipal.getKeycloakSecurityContext().getToken().getPreferredUsername();
-    }
-
-    @DeleteMapping("/api/2")
-    public String deleteCurrentUser(KeycloakPrincipal<KeycloakSecurityContext> keycloakPrincipal, @RequestBody IdV idV) {
-        System.out.println("delete " + idV);
-        return keycloakPrincipal.getKeycloakSecurityContext().getToken().getPreferredUsername();
-    }
-
-
     @DeleteMapping("/1")
     public String delete1(@RequestBody List<Object> list) {
         list.forEach((f) -> System.out.println(f));

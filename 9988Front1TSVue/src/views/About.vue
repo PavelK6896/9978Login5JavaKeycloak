@@ -2,6 +2,13 @@
   <div class="about">
     <HelloWorld></HelloWorld>
     <h1>about</h1>
+
+    <p>{{ user }}</p>
+
+    <div>
+      <button @click="button1">button1</button>
+    </div>
+
   </div>
 </template>
 
@@ -18,20 +25,22 @@ export default {
   },
   data() {
     return {
-      user: {}
+      user: "------"
     }
   },
-  mounted() {
-    console.log(keycloak.token)
-    axios.get('http://localhost:8081/api/2', {
-      headers: {
-        'Authorization': `Bearer ${keycloak.token}`,
-        'Access-Control-Allow-Origin': `*`
-      }
-    }).then(response => {
-      console.log("---")
-      this.user = response.data
-    })
+  methods: {
+    button1() {
+
+      console.log(keycloak)
+      axios.get('http://localhost:8081/api/1', {
+        headers: {
+          'Authorization': `Bearer ${keycloak.token}`
+        }
+      }).then(response => {
+        console.log("---")
+        this.user = response.data
+      })
+    },
   }
 }
 </script>

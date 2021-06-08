@@ -4,13 +4,17 @@ server:
 
 keycloak:
   auth-server-url: http://localhost:8080/auth
-  realm: "list-keep"
-  resource: "list-keep"
+  realm: "list2"
+  resource: "list2"
   bearer-only: true
   security-constraints:
     - authRoles:
+        - q
+        - default-roles-list2
         - uma_authorization
       securityCollections:
         - patterns:
             - /api/*
   cors: true
+  public-client: true
+  principal-attribute: preferred_username

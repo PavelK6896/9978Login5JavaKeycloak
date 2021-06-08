@@ -36,7 +36,7 @@ interface IdV {
 export default defineComponent({
   name: 'Home',
   components: {
-    HelloWorld,
+
   },
   data() {
     return {
@@ -67,7 +67,7 @@ export default defineComponent({
         event.preventDefault()
       }
 
-      const data: IdV = {
+      const data = {
         vOne: '11',
         vTwo: '22',
         vFree: "33",
