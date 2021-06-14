@@ -5,7 +5,7 @@ import store from './store'
 import Keycloak from "keycloak-js";
 
 const initOptions = {
-    url: 'http://127.0.0.1:8080/auth',
+    url: 'http://localhost:8080/auth',
     realm: 'list2',
     clientId: 'list2'
 }

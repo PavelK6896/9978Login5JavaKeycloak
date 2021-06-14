@@ -28,5 +28,10 @@ public class AuthController {
         return keycloakPrincipal.getKeycloakSecurityContext().getToken().getPreferredUsername();
     }
 
+    @GetMapping("/3")
+    public String three() {
+        return "string";
+    }
+
 
 }
