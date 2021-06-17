@@ -2,8 +2,6 @@ package app.web.pavelk.login5.back1.controller;
 
 import app.web.pavelk.login5.back1.dto.request.IdV;
 import lombok.RequiredArgsConstructor;
-import org.keycloak.KeycloakPrincipal;
-import org.keycloak.KeycloakSecurityContext;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,6 +29,12 @@ public class MainController {
     public String delete2(@RequestBody IdV idv) {
         System.out.println(idv);
         System.out.println("delete2");
+        try {
+            IdV.builder().d1(null).d2(idv.getD1()).build();
+        } catch (NullPointerException e) {
+            System.out.println("npe");
+        }
+
         return "delete2";
     }
 
@@ -47,7 +51,6 @@ public class MainController {
         System.out.println("delete4");
         return "delete4";
     }
-
 
 
 }

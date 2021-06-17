@@ -72,7 +72,9 @@ export default defineComponent({
         vTwo: '22',
         vFree: "33",
         vFour: "44",
-        vFour2: "h"
+        vFour2: "h",
+        d2: null,
+        d1: null,
 
       }
 
