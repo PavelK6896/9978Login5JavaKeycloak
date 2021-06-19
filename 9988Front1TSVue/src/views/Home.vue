@@ -27,7 +27,7 @@ import axios from "axios";
 import {keycloak} from "@/main";
 
 
-interface IdV {
+interface IdB {
   vOne?: string
   vTwo?: string
   vFree?: string

@@ -1,6 +1,7 @@
 package app.web.pavelk.login5.back1.controller;
 
 import app.web.pavelk.login5.back1.dto.request.IdV;
+import app.web.pavelk.login5.back1.dto.response.IdB;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,6 +51,12 @@ public class MainController {
         System.out.println(string);
         System.out.println("delete4");
         return "delete4";
+    }
+
+
+    @GetMapping("/d1")
+    public List<IdB> d1() {
+        return List.of(IdB.builder().vOne("1").build(), IdB.builder().vOne("11").build());
     }
 
 
