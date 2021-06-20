@@ -5,12 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import {store} from "./store/store";
+import Keycloak from 'keycloak-js'
+import {ReactKeycloakProvider} from '@react-keycloak/web'
+
+const initOptions = {
+    url: 'http://localhost:8080/auth',
+    realm: 'list2',
+    clientId: 'list3'
+}
+
+export const keycloak = Keycloak(initOptions)
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={store}>
-            <App/>
-        </Provider>
+        <ReactKeycloakProvider authClient={keycloak} initOptions={{onLoad: 'login-required'}}>
+            <Provider store={store}>
+                <App/>
+            </Provider>
+        </ReactKeycloakProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );
